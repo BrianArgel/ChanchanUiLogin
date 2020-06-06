@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import {Router} from '@reach/router';
 import { Link} from '@reach/router';
 
+
 const Logo = styled.div`
      display:flex;
      text-align:center;
@@ -15,7 +16,9 @@ const Inputs = styled.div`
     justify-content:center;
     align-items: center;
     flex-direction:column;
-    margin-top: 8em;
+    margin-top: 4em;
+    position: relative;
+    margin-bottom: 1em;
     
 
     input{
@@ -27,6 +30,10 @@ const Inputs = styled.div`
     }
     input:focus{
         border: 1px solid #8AC924;
+    }
+    label{
+        color: gray;
+        margin-bottom: .5em;
     }
 `;
 
@@ -41,6 +48,7 @@ const Boton = styled.button`
     width: 190px;
     border-radius: 5px;
     
+    
 
     a{
         color:#fff;
@@ -48,75 +56,53 @@ const Boton = styled.button`
         text-decoration: none;
     }
 `;
-const Olvide = styled.div`
-     display:flex;
-     justify-content: flex-end;
-     width: 70%;
-     margin-bottom: 3em;
-     a{
-         text-decoration: none;
-         color: gray;
-         font-size: 14px;
-         text-decoration: underline;
-     }
-`;
-const Registrarme = styled.div`
-     display:flex;
-     text-align:center;
-     justify-content:space-around;
-     margin-top: 1em;
 
-     a{
-         text-decoration: none;
-         font-size:16px;
-         color: gray;
-     }
-     
-`;
-
-const InicionLogin = () => {
+const Registrarme = () => {
     return ( 
         <Fragment>
-
-          
+             
         <Logo>
              <div>
- 
             <Link to="/">
                 <img src="/images/espalda2.svg" />
             </Link>
             </div>
             <div>
             <Link to="/">
-                <img src="/images/logo.svg" />
+            <img src="/images/logo.svg" />
             </Link>
             </div>
-
         </Logo>
+
         <Inputs>
+        <label>Nombre de Usuario</label>
         <input 
             type="text"
-            placeholder="usuario@gmail.com" />
+            placeholder="Ejemplo Brian Ponce" />
+           <label>Correo Electronico</label>
+        <input 
+            type="text" 
+            placeholder="correo@correo.com"/>
+        
+        
+        <label>Contraseña</label>
+        <input 
+            type="text" 
+            placeholder="*********" />
+        
+        <label>Repite la Contraseña</label>
         <input 
             type="text" 
             placeholder="*********" />
         </Inputs>
-        <Olvide>
-            <a href="#!">Olvide Mi contraseña</a>
-        </Olvide>
         <Boton>
-            <a href="#!">Iniciar Sesión</a>
+            <a href="#!">Registrarse ahora!</a>
            
         </Boton>
+        
 
-        <Registrarme>
-            
-            <Link to="/Registrarme">Registrarme ahora</Link>
-        </Registrarme>
         </Fragment>
-
-
      );
 }
  
-export default InicionLogin;
+export default Registrarme;
